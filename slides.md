@@ -21,19 +21,29 @@ Gwennan et Baptiste 20/03/2025
 - Réponse à la problématique
 
 
+---
+
 # Qu'est ce qu'un type ?
 
 Lors de la déclaration d'un élément on lui attribut un type int, string, float.
 
-```val dep:int = 38```
+```ocaml
+val dep: int = 38
+```
 
-```val ville:string = "Grenoble"```
+```ocaml
+val ville: string = "Grenoble"
+```
 
-```val temp:float = 22.8```
+```ocaml
+val temp: float = 22.8
+```
 
 En fait le fonctionnel part d'une approche mathématique, on va avoir des éléments qui ont des types.
 
 💡 cf _Théorie des types_
+
+---
 
 # Qu'est-ce que la mutation ?
 
