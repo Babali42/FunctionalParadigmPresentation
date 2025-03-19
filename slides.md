@@ -1,5 +1,6 @@
 ---
 transition: fade-out
+hideInToc: true
 ---
 
 # Paradigme fonctionnel
@@ -8,17 +9,12 @@ transition: fade-out
 Gwennan et Baptiste 20/03/2025
 
 ---
+hideInToc: true
+---
 
 # Plan
 
-- Type
-  - Mutation
-- Fonction
-- Récursif
-- Types somme et type produit
-- Listes
-- Pattern matching
-- Réponse à la problématique
+<Toc />
 
 
 ---
