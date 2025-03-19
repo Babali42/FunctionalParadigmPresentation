@@ -61,15 +61,27 @@ Il en est de même en programmation fonctionnelle.
 </div>
 
 ---
+
+# Faire des opérations sur les listes
+
+* Définir les listes
+
+* Opérations sur les listes
+
+---
 transition: none
+hideInToc: true
 ---
 
-# Et comment on définit des listes ?
+
+## Définissons et utilisons les listes
 
 <div v-click>
+
 ```ocaml
-type List<T> := Empty | Elem T List<T>;
+type list<T> := Empty | Elem T list<T>;
 ```
+
 </div>
 
 <div v-click>
@@ -77,21 +89,202 @@ type List<T> := Empty | Elem T List<T>;
 Par exemple, la liste `[3, 5, 12]` devient:
 
 ```ocaml
-Elem 3 (Elem 5 (Elem 12 empty));
+val ma_liste = Elem 3 (Elem 5 (Elem 12 empty))
 ```
 </div>
 
+
+---
+hideInToc: true
 ---
 
 
-# Et comment on définit des listes ?
+## Définissons et utilisons les listes
 
 ```ocaml
-type List<T> := [] | T::List<T>;
+type list<T> := [] | T::list<T>;
 ```
 
 Par exemple, la liste `[3, 5, 12]` devient:
 
 ```ocaml
-3::5::12::[];
+val ma_liste = 3::5::12::[]
 ```
+
+<div v-click>
+
+```ocaml
+val l = fun l -> match l with
+        | [] -> []
+        | v::reste -> (v+1)::reste
+```
+
+</div>
+
+---
+transition: fade
+hideInToc: true
+---
+
+
+## Et donc, nos fâmeuses opérations sur les listes ?
+
+```ocaml
+type list<T> := [] | T::list<T>
+```
+
+<v-click>
+
+Exemple de `map`:
+
+```ocaml
+val ma_liste = 1::4::3::12::[] in
+  map ma_liste (fun x -> x + 2);;
+
+(* res: 3::6::5::14::[] *)
+
+```
+
+</v-click>
+
+<v-click>
+
+```ocaml
+val map = fun (l: list<T>) -> (f: T -> U) -> match l with
+
+...
+```
+
+</v-click>
+
+---
+transition: fade
+hideInToc: true
+---
+
+
+## Et donc, nos fâmeuses opérations sur les listes ?
+
+```ocaml
+type list<T> := [] | T::list<T>
+```
+
+Exemple de `map`:
+
+```ocaml
+val ma_liste = 1::4::3::12::[] in
+  map ma_liste (fun x -> x + 2);;
+
+(* res: 3::6::5::14::[] *)
+
+```
+
+```ocaml
+val map = fun (l: list<T>) -> (f: T -> U) -> match l with
+          | [] -> []
+...
+```
+
+---
+transition: fade
+hideInToc: true
+---
+
+
+## Et donc, nos fâmeuses opérations sur les listes ?
+
+```ocaml
+type list<T> := [] | T::list<T>
+```
+
+Exemple de `map`:
+
+```ocaml
+val ma_liste = 1::4::3::12::[] in
+  map ma_liste (fun x -> x + 2);;
+
+(* res: 3::6::5::14::[] *)
+
+```
+
+```ocaml
+val map = fun (l: list<T>) -> (f: T -> U) -> match l with
+          | [] -> []
+          | v::reste -> ...
+```
+
+---
+hideInToc: true
+---
+
+
+## Et donc, nos fâmeuses opérations sur les listes ?
+
+```ocaml
+type list<T> := [] | T::list<T>
+```
+
+Exemple de `map`:
+
+```ocaml
+val ma_liste = 1::4::3::12::[] in
+  map ma_liste (fun x -> x + 2);;
+
+(* res: 3::6::5::14::[] *)
+
+```
+
+```ocaml
+val map = fun (l: list<T>) -> (f: T -> U) -> match l with
+          | [] -> []
+          | v::reste -> (f v)::(map reste f)
+```
+
+---
+hideInToc: true
+---
+
+
+## Et donc, nos fâmeuses opérations sur les listes ?
+
+```ocaml
+val map = fun (l: list<T>) -> (f: T -> U) -> match l with
+          | [] -> []
+          | v::reste -> (f v)::(map reste f)
+```
+
+<v-click>
+
+```javascript
+function map(list, mapper):
+    var result = new List();
+    for x in list:
+        result.push(mapper(x));
+    return result;
+```
+
+</v-click>
+
+<div v-click="[+2, +3]">
+
+```javascript
+function map(list, mapper):
+    ...
+    map(wahla jsp quoi mettre ici);
+    ...
+    return qqchose;
+```
+
+</div>
+
+<div v-click="+3">
+
+```javascript
+function map(list, mapper):
+    if list.isEmpty():
+      return [];
+    else:
+      return [mapper(list[0])] + map(list[1:], mapper);
+```
+
+</div>
