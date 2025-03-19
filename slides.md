@@ -47,6 +47,23 @@ En fait le fonctionnel part d'une approche mathématique, on va avoir des élém
 
 # Qu'est-ce que la mutation ?
 
+```javascript
+var a = 5;
+a = 10;
+```
+
+<div v-click>
+En mathématiques la mutation n'a pas de sens.
+
+Il en est de même en programmation fonctionnelle.
+
+</div>
+
+<div v-click>
+
+💡 _Par exemple Scala utilise le mot clé val (valeur) et non pas var (variable)_
+</div>
+
 ---
 transition: none
 ---
