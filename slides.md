@@ -1,10 +1,12 @@
+---
+transition: fade-out
+---
+
 # Paradigme fonctionnel
 ## On a des langages multi-paradigmes qui font du fonctionnel. En quoi ces langages font du fonctionnel ?
 
 Gwennan et Baptiste 20/03/2025
 
----
-transition: fade-out
 ---
 
 # Plan
@@ -18,9 +20,6 @@ transition: fade-out
 - Pattern matching
 - Réponse à la problématique
 
----
-transition: fade-out
----
 
 # Qu'est ce qu'un type ?
 
@@ -36,8 +35,40 @@ En fait le fonctionnel part d'une approche mathématique, on va avoir des élém
 
 💡 cf _Théorie des types_
 
+# Qu'est-ce que la mutation ?
+
 ---
-transition: fade-out
+transition: none
 ---
 
-# Qu'est-ce que la mutation ?
+# Et comment on définit des listes ?
+
+<div v-click>
+```ocaml
+type List<T> := Empty | Elem T List<T>;
+```
+</div>
+
+<div v-click>
+
+Par exemple, la liste `[3, 5, 12]` devient:
+
+```ocaml
+Elem 3 (Elem 5 (Elem 12 empty));
+```
+</div>
+
+---
+
+
+# Et comment on définit des listes ?
+
+```ocaml
+type List<T> := [] | T::List<T>;
+```
+
+Par exemple, la liste `[3, 5, 12]` devient:
+
+```ocaml
+3::5::12::[];
+```
