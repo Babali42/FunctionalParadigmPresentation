@@ -1,6 +1,9 @@
 ---
 transition: fade-out
 hideInToc: true
+layout: image-right
+image: /images/Colibri-white.svg
+backgroundSize: 20em 20%
 ---
 
 # Le paradigme fonctionnel
@@ -22,7 +25,7 @@ hideInToc: true
 
 * Pattern matching
 
-* Optionnal
+* Optional
 
 * ...
 
@@ -57,7 +60,7 @@ Et si c'était fonctionnel ?
 ```javascript
 function map(list, mapper):
     ...
-    map(wahla jsp quoi mettre ici);
+    map(/*TODO METTRE QQCHOSE ICI*/);
     ...
     return qqchose;
 ```
@@ -107,7 +110,7 @@ val temp: float = 22.8
 </v-click>
 
 <v-click>
-En fait le fonctionnel part d'une approche inspirée des mathématique, on va avoir des éléments qui appartiennent à des ensembles.
+En fait le fonctionnel part d'une approche inspirée des mathématiques, on va avoir des éléments qui appartiennent à des ensembles.
 
 💡 cf _Théorie des types_
 </v-click>
@@ -251,6 +254,10 @@ mult2(4) == mult(2)(4)
 ```
 </v-click>
 
+<v-click>
+💡 _Currification_
+</v-click>
+
 ---
 
 # Faire des opérations sur les listes
@@ -344,7 +351,7 @@ hideInToc: true
 ---
 
 
-## Et donc, nos fâmeuses opérations sur les listes ?
+## Et donc, nos fameuses opérations sur les listes ?
 
 ```ocaml
 type list<T> := [] | T::list<T>
@@ -379,7 +386,7 @@ hideInToc: true
 ---
 
 
-## Et donc, nos fâmeuses opérations sur les listes ?
+## Et donc, nos fameuses opérations sur les listes ?
 
 ```ocaml
 type list<T> := [] | T::list<T>
@@ -406,7 +413,7 @@ hideInToc: true
 ---
 
 
-## Et donc, nos fâmeuses opérations sur les listes ?
+## Et donc, nos fameuses opérations sur les listes ?
 
 ```ocaml
 type list<T> := [] | T::list<T>
@@ -432,7 +439,7 @@ hideInToc: true
 ---
 
 
-## Et donc, nos fâmeuses opérations sur les listes ?
+## Et donc, nos fameuses opérations sur les listes ?
 
 ```ocaml
 type list<T> := [] | T::list<T>
@@ -533,7 +540,7 @@ hideInToc: true
 
 - Pas du fonctionnel pur
 
-- Pour réussir à créer des programmes, le fonctionnel a du créer des outils
+- Pour réussir à créer des programmes, le fonctionnel a dû créer des outils
 
 - Ces outils ont été repris par les langages impératifs
 
@@ -611,3 +618,11 @@ Exemples: optionnal, les opérations sur les listes/itérateurs, le pattern matc
 
 **Il ne sont pas vraiment fonctionnels, mais ont appris du fonctionnel.**
 
+---
+layout: image-right
+
+image: /Images/bob.jpg
+backgroundSize: 20em 80%
+---
+
+# Des questions ?
